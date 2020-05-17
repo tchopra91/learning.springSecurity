@@ -11,6 +11,11 @@
 
     <hr>
 
+    Logged user: <span sec:authentication="name">username</span>
+    Roles: <span sec:authentication="principal.authorities">[roles]</span>
+
+    <hr>
+
     Welcome to home page
 
     <form action="logout" method="POST">
