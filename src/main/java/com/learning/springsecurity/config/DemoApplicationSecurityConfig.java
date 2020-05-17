@@ -27,6 +27,6 @@ public class DemoApplicationSecurityConfig extends WebSecurityConfigurerAdapter 
         http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/home").hasRole("user")
                 .antMatchers("/leaders").hasRole("manager").antMatchers("/admins").hasRole("admin").and().formLogin()
                 .defaultSuccessUrl("/home").loginPage("/login").permitAll().and().logout().logoutSuccessUrl("/")
-                .permitAll();
+                .permitAll().and().exceptionHandling().accessDeniedPage("/accessDenied");
     }
 }
