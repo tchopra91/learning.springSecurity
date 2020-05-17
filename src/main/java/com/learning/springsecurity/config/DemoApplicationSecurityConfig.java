@@ -24,7 +24,9 @@ public class DemoApplicationSecurityConfig extends WebSecurityConfigurerAdapter 
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().permitAll().and().formLogin().defaultSuccessUrl("/home")
-                .loginPage("/login").permitAll().and().logout().logoutSuccessUrl("/").permitAll().and();
+        http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/home").hasRole("user")
+                .antMatchers("/leaders").hasRole("manager").antMatchers("/admins").hasRole("admin").and().formLogin()
+                .defaultSuccessUrl("/home").loginPage("/login").permitAll().and().logout().logoutSuccessUrl("/")
+                .permitAll();
     }
 }
