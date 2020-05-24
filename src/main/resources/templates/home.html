@@ -18,14 +18,14 @@
 
     Welcome to home page
 
-    <div sec:authorize="hasRole('ROLE_employee')">
+    <div sec:authorize="hasAuthority('employee')">
         You are seeing this because you have an employee role.
     </div>
-    <div sec:authorize="hasRole('ROLE_manager')">
+    <div sec:authorize="hasAuthority('manager')">
         <a href="/leaders">Leadership Meeting</a>
         You are seeing this because you have a manager role.
     </div>
-    <div sec:authorize="hasRole('ROLE_admin')">
+    <div sec:authorize="hasAuthority('admin')">
         <a href="/admins">IT Administrator Meeting</a>
         You are seeing this because you have an admin role.
     </div>
