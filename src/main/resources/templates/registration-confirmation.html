@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Registration Confirmation</title>
+</head>
+
+<body>
+
+	<h2>User registered successfully!</h2>
+
+	<hr>
+
+	<form id="my_form" action="logout" method="POST">
+		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+		<a href="javascript:{}" onclick="document.getElementById('my_form').submit(); return false;">Login with new
+			user</a>
+	</form>
+
+</body>
+
+</html>

@@ -28,6 +28,10 @@
     <div sec:authorize="hasAuthority('admin')">
         <a href="/admins">IT Administrator Meeting</a>
         You are seeing this because you have an admin role.
+
+        <div>
+            <a href="/show-registration-form">Register User</a>
+        </div>
     </div>
 
     <form action="logout" method="POST">
